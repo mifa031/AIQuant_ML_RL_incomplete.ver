@@ -88,10 +88,7 @@ class PolicyLearner:
         
         act = np.zeros([1,self.action_size])
         #action_idx = np.random.choice(self.action_size, 1, p=action)[0]
-        if self.agent.curr_price < self.agent.next_price:
-            act[0][0] = 1
-        else:
-            act[0][1] = 1
+        act[0][action_idx] = 1
 
         # 벨만 기대 방정식를 이용한 어드벤티지와 업데이트 타깃
         if done:
